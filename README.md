@@ -17,7 +17,7 @@ El asistente funciona en modo web (`chat.html`) y soporta consultas generales/co
   - Poppler (para procesamiento de PDFs).
   - CUDA Toolkit 12.1 para GPU (NVIDIA).
 
-## Instalación Paso a Paso en PC Limpia
+## Instalación
 
 ### 1. Instalación de Python 3.11
 - Descarga e instala Python 3.11 desde [python.org](https://www.python.org/downloads/release/python-31110/).

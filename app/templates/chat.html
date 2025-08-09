@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Asistente RAG - CMMS/ERP</title>
+    <link rel="icon" href="/static/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="/static/styles.css">
+</head>
+<body>
+    <div>
+        <h2>Consultar en:</h2>
+        <select id="source">
+            <option value="automatico_docs">Automático (Documentos)</option>
+            {% for doc_name in doc_names %}
+                <option value="doc:{{ doc_name }}">{{ doc_name.replace('_', ' ').title() }}</option>
+            {% endfor %}
+            {% for db_name in db_names %}
+                <option value="sql:{{ db_name }}">{{ db_name.replace('_', ' ').title() }}</option>
+            {% endfor %}
+        </select>
+        <h2>Usando IA:</h2>
+        <select id="llm_choice">
+            <option value="ollama">Local (Ollama)</option>
+            <option value="gemini">Google (Gemini)</option>
+        </select>
+    </div>
+    <div>
+        <p>Hola 👋 ¿En qué puedo ayudarte? Elige una fuente de datos y el motor de IA que prefieras.</p>
+        <textarea id="question" rows="4" cols="50"></textarea>
+        <button onclick="sendQuery()">Enviar</button>
+    </div>
+    <script src="/static/script.js"></script>
+</body>
+</html>
